@@ -3,6 +3,14 @@ import { RouteProp } from '@react-navigation/core';
 import { FrameNavigationProp } from "react-nativescript-navigation";
 import { MainStackParamList } from "./NavigationParamList";
 import { StyleSheet } from "react-nativescript";
+import { compose, withProps } from "recompose";
+import Map from "./Map"
+import {
+    withScriptjs,
+    withGoogleMap,
+    GoogleMap,
+    Marker
+} from "react-google-maps";
 
 type SecondaryScreenProps = {
     route: RouteProp<MainStackParamList, "Secondary">,
@@ -21,6 +29,9 @@ export function SecondaryScreen({ navigation }: SecondaryScreenProps) {
             >
                 Go back
             </button>
+
+
+            <Map isMarkerShown />
         </flexboxLayout>
     );
 }
